@@ -1,0 +1,21 @@
+{% extends 'templates/_base.html' %}
+
+<title>
+  {% block title %}{{ folio.title }}{% endblock %}
+</title>
+
+{% block content %}
+
+<article id="{{ folio.title | slugify }}" class="folio">
+  <header class="article-header">
+    <h2>{{ folio.title }}</h2>
+  </header>
+
+  {{ folio.html | safe }}
+
+  <footer class="article-footer">
+    <a href="#header">&uarr; To Top</a>
+  </footer>
+</article>
+
+{% endblock %}

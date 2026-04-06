@@ -1,0 +1,39 @@
+{% extends 'templates/_base.html' %}
+
+<title>
+  {% block title %}"{{ category | capitalize }}" posts{% endblock %}
+</title>
+
+{% block content %}
+
+<section id="article-listing">
+  <h2>Posts in the "{{ category }}" category</h2>
+
+ <ul id="articles">
+  {% for post in posts %}
+  <li>
+    <a href="/{{ post.href }}">{{ post.title }}</a>
+    <span class="date">{{ post.date.strftime('%Y-%m-%d') }}</span>
+  </li>
+  {% endfor %}
+ </ul>
+</section>
+
+{% if all_categories %}
+<aside id="categories">
+  <h3>All Categories</h3>
+  <ul class="category-list">
+    {% for cat in all_categories %}
+    <li>
+      <a href="/categories/{{ cat.slug }}.html"
+         {% if cat.slug == category_slug %}aria-current="page"{% endif %}>
+        {{ cat.name }}
+      </a>
+      <span class="count"> ({{ cat.count }})</span>
+    </li>
+    {% endfor %}
+  </ul>
+</aside>
+{% endif %}
+
+{% endblock %}

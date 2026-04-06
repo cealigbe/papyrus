@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}{% endblock %} - {{ site.site_name }}</title>
+	<link rel="stylesheet" href="/static/style.css" />
+	<link rel="icon" href="/static/img/favicon.png" />
+</head>
+
+{% if page.id == "index" %}
+<body id="home" class="{{ page.type }}">
+{% else %}
+<body id="{{ page.id }}" class="{{ page.type }}">
+{% endif %}
+
+  <header id="header">
+      <h1>{{ site.site_name }}</h1>
+      <nav id="site-nav">
+        <menu>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#work">Work</a></li>
+          <li><a href="/posts.html">Posts</a></li>
+        </menu>
+      </nav>
+    </header>
+
+  <main id="main">
+  {% block content %}
+    <p>This is the content block of the website. This will be filled in by Papyrus.py with your templates.</p>
+  {% endblock %}
+  </main>
+
+  <footer id="footer">
+		<p>
+		  {{ site.site_name }}, &copy; {{ page.created.split('-')[0] }} &emsp; | &emsp; powered by <a href="https://github.com/cealigbe/papyrus" target="_blank">Papyrus.py</a>
+		</p>
+	</footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

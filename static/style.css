@@ -1,0 +1,178 @@
+/* Papyrus.py SSG Starter CSS */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+*:not(dialog) {
+  margin: 0;
+}
+:root {
+  accent-color: #08f;
+}
+html {
+  color-scheme: light dark;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  background-color: light-dark(#f9f9f9, #222);
+  color: light-dark(#222, #fff);
+  min-height: 100vh;
+  padding: 1.5rem;
+  font-family: system-ui, Helvetica, Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+figcaption, caption, .caption {
+  font-size: 0.9em;
+  text-align: center;
+  padding: 1rem 0;
+}
+figure > img {
+  margin: 0 auto;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+input:not([type='radio'], [type='checkbox']), button, textarea, select {
+  display: block;
+  min-width: 20rem;
+  margin-block: 0.5rem 1rem;
+}
+input, textarea, select {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid light-dark(#333, #ccc);
+  border-radius: 4px;
+  background-color: light-dark(#eee, #202020);
+}
+button, input:is([type='button'], [type='submit'], [type='reset']) {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #08f;
+  color: #eee;
+  font-weight: bold;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+button:is(:hover, :focus), input:is([type='button'], [type='submit'], [type='reset']):is(:hover, :focus) {
+  opacity: 0.75;
+}
+input:is([type='radio'], [type='checkbox']) {
+  position: relative;
+  padding: 0;
+  margin-inline-end: 0.25rem;
+  width: 1em;
+  height: 1em;
+  top: 0.125em;
+  cursor: pointer;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+p {
+  text-wrap: pretty;
+  margin-block: 0 1rem;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  margin-block: 0.5rem 1rem;
+}
+h1, h2, h3, h4 {
+  line-height: 1.2;
+}
+a {
+  color: #08f;
+  font-weight: bold;
+  transition: opacity 0.2s ease;
+}
+a:hover, a:focus {
+  opacity: 0.75;
+}
+hr {
+  background-color: transparent;
+  border-bottom: 2px solid light-dark(#666, #ccc);
+  height: 0;
+  margin-block: 0.75rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+table th, table td {
+  padding: 0.5rem;
+  text-align: left;
+  border: none;
+}
+table tr:nth-of-type(2n) td {
+  background-color: light-dark(#e0e0e0, #404040);
+}
+table th {
+  border-bottom: 2px solid light-dark(#666, #ccc);
+  font-weight: bold;
+}
+header, main, footer, section, article, aside {
+  margin-bottom: 2rem;
+}
+body > :is(header, main, footer) {
+  width: 100%;
+  flex: 0 0 auto;
+}
+body > header {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+}
+body > main {
+  max-width: min(50rem, 100%);
+  margin-inline: auto;
+  flex: 2 0 auto;
+}
+body > footer {
+  text-align: center;
+  margin-block: 2rem 0;
+  font-size: 1rem;
+}
+aside {
+  padding: 1rem;
+  background-color: light-dark(#ddd, #333);
+  border: 2px solid light-dark(#666, #ccc);
+  border-radius: 0.5rem;
+}
+nav#site-nav {
+  width: 100%;
+}
+nav > menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  gap: 4px;
+  padding: 0;
+  justify-content: right;
+  align-items: center;
+}
+nav#site-nav li {
+  padding: 0.5rem 1rem;
+}
+ul#articles {
+  padding: 1rem 0;
+  list-style: none;
+}
+ul#articles li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+ul.category-list {
+  margin-bottom: 1rem;
+}

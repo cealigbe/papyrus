@@ -1,0 +1,5 @@
+site_name = "My Site"
+site_url = "http://example.com"
+build_date = "2026-04-05"
+creator = "John Doe"
+description = "Welcome to my website."
