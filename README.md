@@ -158,7 +158,7 @@ There are also additional scripts:
 
 ## Sites Built with Papyrus
 - My website, [chuck.aligbe.com](http://chuck.aligbe.com)
-- And hopefully yours; feel free to [submit it here](http://chuck.aligbe.com/contact.html)
+- And hopefully yours; feel free to [submit it here](http://chuck.aligbe.com/contact)
 
 ## Notes and caveats
 - `config.toml` is rewritten during builds to persist updated `build_date`. Make sure to stop the testing server before updated the config file.
